@@ -1,0 +1,43 @@
+[gd_scene load_steps=6 format=3 uid="uid://25sno4c4hooq"]
+
+[ext_resource type="Script" path="res://cam.gd" id="1_c1y42"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u085u"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fnvhe"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_btwo2"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xyie4"]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_u085u")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0, 0)
+mesh = SubResource("PlaneMesh_fnvhe")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.00519, 0)
+script = ExtResource("1_c1y42")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_btwo2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_xyie4")
+
+[node name="Node3D" type="Node3D" parent="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.520551, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.885264, 0.465089, 0, -0.465089, 0.885264, 0, 1.73495, 4.6817)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13147, 3.6153, 0)
+omni_range = 11.332
+omni_attenuation = 1.21

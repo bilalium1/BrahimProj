@@ -50,8 +50,8 @@ func _ready():
 	camera = $Node3D/Camera3D
 	subject = $Node3D
 	subject_position = subject.global_position  # Assuming the subject is the target
-	$"Model/AnimationPlayer".play("Imported/idle2")
-	switch_character()
+	# $"Model/AnimationPlayer".play("Imported/idle2")
+	# switch_character()
 
 func _input(event):
 	# Detect mouse wheel scroll event for zoom
