@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://25sno4c4hooq"]
 
-[ext_resource type="Script" path="res://cam.gd" id="1_c1y42"]
+[ext_resource type="Script" path="res://scripts/cam.gd" id="1_c1y42"]
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_u085u"]
 
@@ -36,8 +36,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.520551, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Node3D"]
 transform = Transform3D(1, 0, 0, 0, 0.885264, 0.465089, 0, -0.465089, 0.885264, 0, 1.73495, 4.6817)
-
-[node name="OmniLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13147, 3.6153, 0)
-omni_range = 11.332
-omni_attenuation = 1.21
